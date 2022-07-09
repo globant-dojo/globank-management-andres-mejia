@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "F/iSfulS+pr/CMwc9pB8ekyQhdnomBDinWiVeBGPAlG+MXWFdxvSxA0HjHnuPZtIKG565mgxJNsUSjocfuggxQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\orlando.mejia\\Documents\\source\\DojoProject\\DojoProject.Application\\DojoProject.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\orlando.mejia\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\orlando.mejia\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
+    "C:\\Users\\orlando.mejia\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\orlando.mejia\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\orlando.mejia\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

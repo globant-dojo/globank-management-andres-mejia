@@ -1,0 +1,12 @@
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Domain\bin\Debug\net6.0\DojoProject.Domain.deps.json
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Domain\bin\Debug\net6.0\DojoProject.Domain.dll
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Domain\bin\Debug\net6.0\DojoProject.Domain.pdb
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Domain\obj\Debug\net6.0\DojoProject.Domain.csproj.AssemblyReference.cache
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Domain\obj\Debug\net6.0\DojoProject.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Domain\obj\Debug\net6.0\DojoProject.Domain.AssemblyInfoInputs.cache
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Domain\obj\Debug\net6.0\DojoProject.Domain.AssemblyInfo.cs
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Domain\obj\Debug\net6.0\DojoProject.Domain.csproj.CoreCompileInputs.cache
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Domain\obj\Debug\net6.0\DojoProject.Domain.dll
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Domain\obj\Debug\net6.0\refint\DojoProject.Domain.dll
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Domain\obj\Debug\net6.0\DojoProject.Domain.pdb
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Domain\obj\Debug\net6.0\ref\DojoProject.Domain.dll
