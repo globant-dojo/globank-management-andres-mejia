@@ -70,9 +70,9 @@ namespace DojoProject.Domain.Tests.Account
                     .Build()
             ));
 
-            var result = await _accountService.RegisterAccountAsync(older);
+            var result = await _accountService.RegisterAccountAsync(newAccount);
 
-            Assert.IsTrue(result is ProjectMicroDapper.Domain.Entities.Account && result?.Id is not null);
+            Assert.IsTrue(result is Domain.Entities.Account && result?.Id is not null);
         }
         
     }

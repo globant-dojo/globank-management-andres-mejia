@@ -68,7 +68,7 @@ namespace DojoProject.Domain.Tests.Client
 
             Assert.IsTrue(result is Domain.Entities.Client && result?.Id is not null);
         }
-        */
+        
     }
 
 }
