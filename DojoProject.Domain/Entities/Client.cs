@@ -12,9 +12,11 @@ namespace DojoProject.Domain.Entities
         [StringLength(255)]
         public string Password { get; set; }
         [StringLength(255)]
-        public string State { get; set; }
+        public bool State { get; set; }
 
-        public Client(string password, string state)
+        public Client(string password, bool state, string name,
+            Client.GenderType gender, string age, string identification , string address) 
+            : base(name, gender, age, identification, address)
         {
             Password = password;
             State = state;

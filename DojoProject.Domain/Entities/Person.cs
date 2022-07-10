@@ -13,7 +13,7 @@ namespace DojoProject.Domain.Entities
         [StringLength(255)]
         public string Name { get; set; }
         [StringLength(255)]
-        public string Gender { get; set; }
+        public GenderType Gender { get; set; }
         [StringLength(255)]
         public string Age { get; set; }
         [StringLength(255)]
@@ -21,7 +21,7 @@ namespace DojoProject.Domain.Entities
         [StringLength(255)]
         public string Address { get; set; }
 
-        public Person(string name, string gender, string age, string identification, string address)
+        public Person(string name, GenderType gender, string age, string identification, string address)
         {
             Name = name;
             Gender = gender;
@@ -33,6 +33,8 @@ namespace DojoProject.Domain.Entities
         public Person()
         {
         }
+
+        public enum GenderType { Masculino, Femenino, Otro }
 
     }
 }

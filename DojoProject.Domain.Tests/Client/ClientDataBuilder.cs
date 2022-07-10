@@ -8,17 +8,18 @@ namespace DojoProject.Domain.Tests.Client
 {
     public class ClientDataBuilder
     {
+        bool State = default!;
         string Name = default!;
-        string Gender = default!;
+        Entities.Client.GenderType Gender = default!;
         string Age = default!;
         string Identification = default!;
         string Address = default!;
-        string Phone = default!;
+        string Password = default!;
 
 
-        public object Build()
+        public Entities.Client Build()
         {
-            object Client = default!;
+            Entities.Client Client = new(Password, State, Name, Gender, Age, Identification, Address);
             return Client;
         }
 
@@ -28,7 +29,13 @@ namespace DojoProject.Domain.Tests.Client
             return this;
         }
 
-        public ClientDataBuilder WithGender(string gender)
+        public ClientDataBuilder WithState(bool state)
+        {
+            State = state;
+            return this;
+        }
+
+        public ClientDataBuilder WithGender(Entities.Client.GenderType gender)
         {
             Gender = gender;
             return this;
@@ -52,11 +59,7 @@ namespace DojoProject.Domain.Tests.Client
             return this;
         }
 
-        public ClientDataBuilder WithPhone(string phone)
-        {
-            Phone = phone;
-            return this;
-        }
+
     }
 
 }

@@ -9,17 +9,18 @@ namespace DojoProject.Domain.Tests.Movement
 
     public class MovementDataBuilder
     {
-        string Type = default!;
+        Entities.Movement.MovementType Type = default!;
         int Value = default!;
         int Balance = default!;
+        Entities.Account Account = default!;
 
-        public object Build()
+        public Domain.Entities.Movement Build()
         {
-            object Movement = default!;
-            return Movement;
+            Domain.Entities.Movement movement = new(Type, Value, Balance, Account);
+            return movement;
         }
 
-        public MovementDataBuilder WithType(string type)
+        public MovementDataBuilder WithType(Entities.Movement.MovementType type)
         {
             Type = type;
             return this;
@@ -31,9 +32,15 @@ namespace DojoProject.Domain.Tests.Movement
             return this;
         }
 
-        public MovementDataBuilder WithValance(int valance)
+        public MovementDataBuilder WithBalance(int balance)
         {
-            Balance = valance;
+            Balance = balance;
+            return this;
+        }
+
+        public MovementDataBuilder WithAccount(Domain.Entities.Account account)
+        {
+            Account = account;
             return this;
         }
     }

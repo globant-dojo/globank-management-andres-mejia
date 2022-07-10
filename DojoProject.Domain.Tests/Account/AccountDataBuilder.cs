@@ -9,13 +9,14 @@ namespace DojoProject.Domain.Tests.Account
     public class AccountDataBuilder
     {
         int Account_Number = default!;
-        string Type = default!;
+        Entities.Account.AccountType Type = default!;
         int Initial_Balance = default!;
         bool State = default!;
+        Entities.Client Client = default!;
 
-        public object Build()
+        public Entities.Account Build()
         {
-            object Account = default!;
+            Entities.Account Account = new(Account_Number,Type,Initial_Balance,State);
             return Account;
         }
 
@@ -25,7 +26,7 @@ namespace DojoProject.Domain.Tests.Account
             return this;
         }
 
-        public AccountDataBuilder WithType(string type)
+        public AccountDataBuilder WithType(Entities.Account.AccountType type)
         {
             Type = type;
             return this;
@@ -40,6 +41,12 @@ namespace DojoProject.Domain.Tests.Account
         public AccountDataBuilder WithState(bool state)
         {
             State = state;
+            return this;
+        }
+
+        public AccountDataBuilder WithClient(Entities.Client client)
+        {
+            Client = client;
             return this;
         }
 

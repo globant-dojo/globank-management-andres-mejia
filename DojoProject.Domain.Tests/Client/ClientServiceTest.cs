@@ -1,4 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using DojoProject.Domain.Exceptions;
+using DojoProject.Domain.Ports;
+using DojoProject.Domain.Services;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NSubstitute;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,53 +14,59 @@ namespace DojoProject.Domain.Tests.Client
     [TestClass]
     public class ClientServiceTest
     {
-        // IGenericRepository<object> _ClientRepository = !default;
-        // ClientService _clientService = !default;
+        IGenericRepository<Entities.Client> _clientRepository = default!;
+        ClientService _clientService = default!;
 
         [TestInitialize]
         public void Init()
         {
-            //_clientRepository = Substitute.For<IGenericRepository<Domain.Entities.Client>>();
-            //_clientService = new ClientService(_clientRepository);
+            _clientRepository = Substitute.For<IGenericRepository<Domain.Entities.Client>>();
+            _clientService = new ClientService(_clientRepository);
         }
-        /*
+        
         [TestMethod]
         public async Task FailToRegisterClient()
         {
             try
             {
-                Domain.Entities.Client newClient = new()
-                {
-                };
+                Domain.Entities.Client newClient = null;
                 await _clientService.RegisterClientAsync(newClient);
             }
             catch (System.Exception ex)
             {
-                Assert.IsTrue(ex is RegisterException);
+                Assert.IsTrue(ex is RegisterClientException);
             }
         }
 
         [TestMethod]
         public async Task SuccessToRegisterClient()
         {
-            ProjectMicroDapper.Domain.Entities.Client newClient = new()
+            Domain.Entities.Client newClient = new()
             {
+                Id = Guid.NewGuid(),
                 Name = "Carlos",
                 Age = "24",
-                Email = "carl@email.com",
+                Address = "Cra 23 # 23",
+                Gender = Entities.Person.GenderType.Masculino,
+                Identification = "12312312",
+                Password = "Password",
+                State = true
             };
 
             _clientRepository.AddAsync(Arg.Any<Domain.Entities.Client>()).Returns(Task.FromResult(
                 new ClientDataBuilder()
-                    .WithName(newClient.FirstName)
-                    .WithLastName(newClient.LastName)
-                    .WithEmail(newClient.Email)
-                    .WithDateOfBirth(newClient.DateOfBirth).Build()
+                    .WithName(newClient.Name)
+                    .WithAddress(newClient.Address)
+                    .WithGender(newClient.Gender)
+                    .WithIdentification(newClient.Identification)
+                    .WithAge(newClient.Age)
+                    .WithState(newClient.State)
+                    .Build()
             ));
 
-            var result = await _clientService.RegisterClientAsync(older);
+            var result = await _clientService.RegisterClientAsync(newClient);
 
-            Assert.IsTrue(result is ProjectMicroDapper.Domain.Entities.Client && result?.Id is not null);
+            Assert.IsTrue(result is Domain.Entities.Client && result?.Id is not null);
         }
         */
     }
