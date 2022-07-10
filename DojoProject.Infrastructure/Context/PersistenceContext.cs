@@ -28,6 +28,9 @@ namespace DojoProject.Infrastructure.Context
             }
 
             modelBuilder.HasDefaultSchema(_config.GetValue<string>("SchemaName"));
+            modelBuilder.Entity<Account>();
+            modelBuilder.Entity<Client>();
+            modelBuilder.Entity<Movement>();
 
 
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
