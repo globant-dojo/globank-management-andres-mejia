@@ -113,3 +113,4 @@ C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Api\obj\Debug\ne
 C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Api\obj\Debug\net6.0\DojoProject.Api.pdb
 C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Api\obj\Debug\net6.0\DojoProject.Api.genruntimeconfig.cache
 C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Api\obj\Debug\net6.0\ref\DojoProject.Api.dll
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Api\obj\Debug\net6.0\DojoProject.Api.MvcApplicationPartsAssemblyInfo.cs

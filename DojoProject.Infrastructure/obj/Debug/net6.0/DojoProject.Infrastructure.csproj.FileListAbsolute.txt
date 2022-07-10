@@ -15,3 +15,5 @@ C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Infrastructure\o
 C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Infrastructure\obj\Debug\net6.0\refint\DojoProject.Infrastructure.dll
 C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Infrastructure\obj\Debug\net6.0\DojoProject.Infrastructure.pdb
 C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Infrastructure\obj\Debug\net6.0\ref\DojoProject.Infrastructure.dll
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Infrastructure\bin\Debug\net6.0\DojoProject.Infrastructure.runtimeconfig.json
+C:\Users\orlando.mejia\Documents\source\DojoProject\DojoProject.Infrastructure\obj\Debug\net6.0\DojoProject.Infrastructure.genruntimeconfig.cache
