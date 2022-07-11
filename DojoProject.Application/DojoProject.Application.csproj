@@ -16,4 +16,8 @@
     <ProjectReference Include="..\DojoProject.Domain\DojoProject.Domain.csproj" />    
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Account\Queries\" />
+  </ItemGroup>
+
 </Project>

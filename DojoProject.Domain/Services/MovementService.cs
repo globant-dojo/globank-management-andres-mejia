@@ -33,5 +33,26 @@ namespace DojoProject.Domain.Services
 
             return await _repository.AddAsync(movement);
         }
+
+
+        public async Task<Movement> UpdateMovementAsync(Movement movement)
+        {
+            var oldMovement = await _repository.GetByIdAsync(movement.Id);
+
+            if (oldMovement == null)
+                throw new RegisterMovementException("No se ha encontrado el movemente");
+
+            await _repository.UpdateAsync(movement);
+            return movement;
+        }
+
+        public async Task DeleteMovementAsync(Guid movementId)
+        {
+            var movementDelete = await _repository.GetByIdAsync(movementId);
+            if (movementDelete == null)
+                throw new RegisterMovementException("No se ha encontrado el movemente");
+
+            await _repository.DeleteAsync(movementDelete);
+        }
     }
 }

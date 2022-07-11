@@ -1,4 +1,5 @@
 ﻿using DojoProject.Domain.Entities;
+using DojoProject.Domain.Exceptions;
 using DojoProject.Domain.Ports;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,26 @@ namespace DojoProject.Domain.Services
             }
             throw new ArgumentNullException(nameof(account));
 
+        }
+
+        public async Task<Account> UpdateAccountAsync(Account account)
+        {
+            var oldAccount = await _repository.GetByIdAsync(account.Id);
+
+            if (oldAccount == null)
+                throw new RegisterAccountException("No se ha encontrado el accounte");
+
+            await _repository.UpdateAsync(account);
+            return account;
+        }
+
+        public async Task DeleteAccountAsync(Guid id)
+        {
+            var accountDelete = await _repository.GetByIdAsync(id);
+            if (accountDelete == null)
+                throw new RegisterClientException("No se ha encontrado la cuenta");
+
+            await _repository.DeleteAsync(accountDelete);
         }
     }
 }
