@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using DojoProject.Application.Report.Dtos;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -15,9 +16,8 @@ namespace DojoProject.Application.Account.Command
         [Required] int Account_Number,
         [Required] AccountType Type,
         [Required] int Initial_Balance,
-        [Required] bool State,
-        [Required] Domain.Entities.Client Client
+        [Required] bool State
 
 
-        ) : IRequest;
+        ) : IRequest<GuidResultDto>;
 }

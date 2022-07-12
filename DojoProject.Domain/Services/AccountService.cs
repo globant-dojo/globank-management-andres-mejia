@@ -22,11 +22,11 @@ namespace DojoProject.Domain.Services
 
         public async Task<Account> RegisterAccountAsync(Account account)
         {
-            if (account == null)
+            if (account != null)
             {
                 return await _repository.AddAsync(account);
             }
-            throw new ArgumentNullException(nameof(account));
+            throw new RegisterAccountException(nameof(account));
 
         }
 
@@ -35,7 +35,7 @@ namespace DojoProject.Domain.Services
             var oldAccount = await _repository.GetByIdAsync(account.Id);
 
             if (oldAccount == null)
-                throw new RegisterAccountException("No se ha encontrado el accounte");
+                throw new RegisterAccountException("No se ha encontrado la cuenta");
 
             await _repository.UpdateAsync(account);
             return account;

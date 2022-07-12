@@ -1,4 +1,5 @@
-﻿using DojoProject.Domain.Services;
+﻿using DojoProject.Application.Report.Dtos;
+using DojoProject.Domain.Services;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DojoProject.Application.Client.Command
 {
-    public class ClientCreateHandler : IRequest<ClientCreateCommand>
+    public class ClientCreateHandler : IRequestHandler<ClientCreateCommand, GuidResultDto>
     {
         private readonly ClientService _clientService;
 
@@ -18,15 +19,20 @@ namespace DojoProject.Application.Client.Command
                 ?? throw new ArgumentNullException(nameof(clientService));
         }
 
-        protected async Task Handle(ClientCreateCommand request ,
-            CancellationToken cancellationToken)
-        {
-            _ = request ?? throw new ArgumentNullException(nameof(request) ,
-                "Se necesita un objeto request para realizar esta Task");
+        
 
+        
+
+        async Task<GuidResultDto> IRequestHandler<ClientCreateCommand, GuidResultDto>.Handle(ClientCreateCommand request, CancellationToken cancellationToken)
+        {
+            _ = request ?? throw new ArgumentNullException(nameof(request),
+                                        "Se necesita un objeto request para realizar esta Task");
+
+            Guid guidResult = Guid.NewGuid(); 
             await _clientService.RegisterClientAsync(
                 new Domain.Entities.Client
                 {
+                    Id = guidResult,
                     Name = request.Name,
                     Address = request.Address,
                     Age = request.Age,
@@ -35,8 +41,9 @@ namespace DojoProject.Application.Client.Command
                     Password = request.Password,
                     State = request.State,
                 }
-
             );
+
+            return new GuidResultDto { id = guidResult};
         }
     }
 }

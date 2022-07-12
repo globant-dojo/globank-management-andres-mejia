@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using DojoProject.Application.Report.Dtos;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,12 +12,11 @@ using static DojoProject.Domain.Entities.Person;
 namespace DojoProject.Application.Movement.Command
 {
     public record MovementUpdateCommand(
-        [Required] Guid Guid,
+        [Required] Guid movementId,
         [Required] MovementType Type,
         [Required] int Balance,
-        [Required] int Value,
-        [Required] Domain.Entities.Account Account
+        [Required] int Value
 
 
-        ) : IRequest;
+        ) : IRequest<GuidResultDto>;
 }

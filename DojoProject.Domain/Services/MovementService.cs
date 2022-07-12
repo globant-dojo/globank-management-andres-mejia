@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace DojoProject.Domain.Services
 {
+    [DomainService]
     public class MovementService
     {
         readonly IGenericRepository<Movement> _repository;
@@ -40,9 +41,13 @@ namespace DojoProject.Domain.Services
             var oldMovement = await _repository.GetByIdAsync(movement.Id);
 
             if (oldMovement == null)
-                throw new RegisterMovementException("No se ha encontrado el movemente");
+                throw new RegisterMovementException("No se ha encontrado el registro del movimiento");
 
-            await _repository.UpdateAsync(movement);
+            oldMovement.Balance = movement.Balance;
+            oldMovement.Type = movement.Type;
+            oldMovement.Value = movement.Value;
+
+            await _repository.UpdateAsync(oldMovement);
             return movement;
         }
 
@@ -50,7 +55,7 @@ namespace DojoProject.Domain.Services
         {
             var movementDelete = await _repository.GetByIdAsync(movementId);
             if (movementDelete == null)
-                throw new RegisterMovementException("No se ha encontrado el movemente");
+                throw new RegisterMovementException("No se ha encontrado el registro del movimiento");
 
             await _repository.DeleteAsync(movementDelete);
         }

@@ -17,6 +17,8 @@ namespace DojoProject.Application.Movement.Dtos
         public int Value { get; set; } = 0;
         public int Balance { get; set; } = 0;
 
+        public DateTime Date { get; set; }
+
         public Domain.Entities.Account Account { get; set; }
 
 

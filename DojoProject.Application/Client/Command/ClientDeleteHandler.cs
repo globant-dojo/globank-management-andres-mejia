@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DojoProject.Application.Client.Command
 {
-    public class ClientDeleteHandler : IRequest<ClientDeleteCommand>
+    public class ClientDeleteHandler : AsyncRequestHandler<ClientDeleteCommand>
     {
         private readonly ClientService _clientService;
 
@@ -18,8 +18,7 @@ namespace DojoProject.Application.Client.Command
                 ?? throw new ArgumentNullException(nameof(clientService));
         }
 
-        protected async Task Handle(ClientDeleteCommand request , 
-            CancellationToken cancellationToken)
+        protected override async Task Handle(ClientDeleteCommand request, CancellationToken cancellationToken)
         {
             _ = request ?? throw new ArgumentNullException(nameof(request),
                 "Se necesita un objeto request para realizar esta Task");
@@ -27,5 +26,6 @@ namespace DojoProject.Application.Client.Command
                 request.Id
                 );
         }
+
     }
 }

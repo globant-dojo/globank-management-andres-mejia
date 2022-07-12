@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using DojoProject.Application.Client.Dtos;
+using DojoProject.Application.Report.Dtos;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -16,6 +18,6 @@ namespace DojoProject.Application.Client.Command
             [Required] string Age,
             [Required] string Identification,
             [Required] string Address
-        ) : IRequest;
+        ) : IRequest<GuidResultDto>;
     
 }

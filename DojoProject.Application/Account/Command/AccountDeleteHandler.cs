@@ -1,5 +1,4 @@
-﻿using DojoProject.Application.Client.Command;
-using DojoProject.Domain.Services;
+﻿using DojoProject.Domain.Services;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -9,24 +8,24 @@ using System.Threading.Tasks;
 
 namespace DojoProject.Application.Account.Command
 {
-    public class AccountDeleteHandler : IRequest<AccountDeleteCommand>
+    public class AccountDeleteHandler : AsyncRequestHandler<AccountDeleteCommand>
     {
-        private readonly AccountService _clientService;
+        private readonly AccountService _accountService;
 
-        public AccountDeleteHandler(AccountService clientService)
+        public AccountDeleteHandler(AccountService accountService)
         {
-            _clientService = clientService
-                ?? throw new ArgumentNullException(nameof(clientService));
+            _accountService = accountService
+                ?? throw new ArgumentNullException(nameof(accountService));
         }
 
-        protected async Task Handle(AccountDeleteCommand request , 
-            CancellationToken cancellationToken)
+        protected override async Task Handle(AccountDeleteCommand request, CancellationToken cancellationToken)
         {
             _ = request ?? throw new ArgumentNullException(nameof(request),
                 "Se necesita un objeto request para realizar esta Task");
-            await _clientService.DeleteAccountAsync(
+            await _accountService.DeleteAccountAsync(
                 request.Id
                 );
         }
+
     }
 }

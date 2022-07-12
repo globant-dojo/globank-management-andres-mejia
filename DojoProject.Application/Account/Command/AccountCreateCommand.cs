@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using DojoProject.Domain.Entities;
 
 using static DojoProject.Domain.Entities.Account;
+using DojoProject.Application.Report.Dtos;
 
 namespace DojoProject.Application.Account.Command
 {
@@ -17,8 +18,8 @@ namespace DojoProject.Application.Account.Command
             [Required] AccountType Type,
             [Required] int Initial_Balance,
             [Required] bool State,
-            [Required] Domain.Entities.Client Client
+            [Required] Guid ClientId
 
-        ) : IRequest;
+        ) : IRequest<GuidResultDto>;
     
 }

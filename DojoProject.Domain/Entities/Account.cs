@@ -16,6 +16,8 @@ namespace DojoProject.Domain.Entities
 
         public Client Client { get; set; }
 
+        public ICollection<Movement> Movements { get; set; }
+
         public Account(int account_Number, AccountType type, int initial_Balance, bool state)
         {
             Account_Number = account_Number;

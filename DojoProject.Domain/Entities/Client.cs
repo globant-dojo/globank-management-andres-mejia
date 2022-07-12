@@ -14,6 +14,8 @@ namespace DojoProject.Domain.Entities
         [StringLength(255)]
         public bool State { get; set; }
 
+        public ICollection<Account> Accounts { get; set; }
+
         public Client(string password, bool state, string name,
             Client.GenderType gender, string age, string identification , string address) 
             : base(name, gender, age, identification, address)

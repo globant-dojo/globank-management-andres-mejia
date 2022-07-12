@@ -12,8 +12,9 @@ namespace DojoProject.Domain.Entities
         public MovementType Type { get; set; }
         public int Value { get; set; } = 0;
         public int Balance { get; set; } = 0;
+        public virtual Account Account { get; set; }
 
-        public Account Account { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
 
         public Movement(MovementType type, int value, int balance, Account account)
         {

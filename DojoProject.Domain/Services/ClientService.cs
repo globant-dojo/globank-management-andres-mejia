@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace DojoProject.Domain.Services
 {
+    [DomainService]
     public class ClientService
     {
         readonly IGenericRepository<Client> _repository;
@@ -34,8 +35,16 @@ namespace DojoProject.Domain.Services
             if (oldClient == null)
                 throw new RegisterClientException("No se ha encontrado el cliente");
 
-            await _repository.UpdateAsync(client);
-            return client;
+            oldClient.State = client.State;
+            oldClient.Name = client.Name;
+            oldClient.Address = client.Address;
+            oldClient.Age = client.Age;
+            oldClient.Password = client.Password;
+            oldClient.Identification = client.Identification;
+            oldClient.Gender = client.Gender;
+
+            await _repository.UpdateAsync(oldClient);
+            return oldClient;
         }
 
         public async Task DeleteClientAsync(Guid clientId)

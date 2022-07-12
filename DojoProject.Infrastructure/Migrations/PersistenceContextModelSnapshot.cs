@@ -28,7 +28,7 @@ namespace DojoProject.Infrastructure.Migrations
                     b.Property<int>("Account_Number")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("ClientId")
+                    b.Property<Guid>("ClientId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedOn")
@@ -78,10 +78,9 @@ namespace DojoProject.Infrastructure.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.Property<string>("Gender")
-                        .IsRequired()
+                    b.Property<int>("Gender")
                         .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("int");
 
                     b.Property<string>("Identification")
                         .IsRequired()
@@ -103,10 +102,9 @@ namespace DojoProject.Infrastructure.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("State")
-                        .IsRequired()
+                    b.Property<bool>("State")
                         .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -119,7 +117,7 @@ namespace DojoProject.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AccountId")
+                    b.Property<Guid>("AccountId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Balance")
@@ -129,6 +127,9 @@ namespace DojoProject.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("LastModifiedOn")
                         .ValueGeneratedOnAdd()
@@ -151,8 +152,10 @@ namespace DojoProject.Infrastructure.Migrations
             modelBuilder.Entity("DojoProject.Domain.Entities.Account", b =>
                 {
                     b.HasOne("DojoProject.Domain.Entities.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId");
+                        .WithMany("Accounts")
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Client");
                 });
@@ -160,10 +163,22 @@ namespace DojoProject.Infrastructure.Migrations
             modelBuilder.Entity("DojoProject.Domain.Entities.Movement", b =>
                 {
                     b.HasOne("DojoProject.Domain.Entities.Account", "Account")
-                        .WithMany()
-                        .HasForeignKey("AccountId");
+                        .WithMany("Movements")
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Account");
+                });
+
+            modelBuilder.Entity("DojoProject.Domain.Entities.Account", b =>
+                {
+                    b.Navigation("Movements");
+                });
+
+            modelBuilder.Entity("DojoProject.Domain.Entities.Client", b =>
+                {
+                    b.Navigation("Accounts");
                 });
 #pragma warning restore 612, 618
         }

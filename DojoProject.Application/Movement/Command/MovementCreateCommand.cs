@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using DojoProject.Domain.Entities;
 
 using static DojoProject.Domain.Entities.Movement;
+using DojoProject.Application.Report.Dtos;
 
 namespace DojoProject.Application.Movement.Command
 {
@@ -16,8 +17,8 @@ namespace DojoProject.Application.Movement.Command
             [Required] MovementType Type,
             [Required] int Balance,
             [Required] int Value,
-            [Required] Domain.Entities.Account Account
+            [Required] Guid AccountId
 
-        ) : IRequest;
+        ) : IRequest<GuidResultDto>;
     
 }

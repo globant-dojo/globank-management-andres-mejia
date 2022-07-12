@@ -28,8 +28,12 @@ namespace DojoProject.Infrastructure.Context
             }
 
             modelBuilder.HasDefaultSchema(_config.GetValue<string>("SchemaName"));
-            modelBuilder.Entity<Account>();
-            modelBuilder.Entity<Client>();
+            modelBuilder.Entity<Client>()
+                .HasMany(client => client.Accounts)
+                .WithOne(account => account.Client);
+            modelBuilder.Entity<Account>()
+                .HasMany(account => account.Movements)
+                .WithOne(movement => movement.Account);
             modelBuilder.Entity<Movement>();
 
 

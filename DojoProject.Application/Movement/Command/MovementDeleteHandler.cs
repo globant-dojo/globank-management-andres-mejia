@@ -1,5 +1,4 @@
-﻿using DojoProject.Application.Client.Command;
-using DojoProject.Domain.Services;
+﻿using DojoProject.Domain.Services;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -9,24 +8,24 @@ using System.Threading.Tasks;
 
 namespace DojoProject.Application.Movement.Command
 {
-    public class MovementDeleteHandler : IRequest<MovementDeleteCommand>
+    public class MovementDeleteHandler : AsyncRequestHandler<MovementDeleteCommand>
     {
-        private readonly MovementService _clientService;
+        private readonly MovementService _movementService;
 
-        public MovementDeleteHandler(MovementService clientService)
+        public MovementDeleteHandler(MovementService movementService)
         {
-            _clientService = clientService
-                ?? throw new ArgumentNullException(nameof(clientService));
+            _movementService = movementService
+                ?? throw new ArgumentNullException(nameof(movementService));
         }
 
-        protected async Task Handle(MovementDeleteCommand request , 
-            CancellationToken cancellationToken)
+        protected override async Task Handle(MovementDeleteCommand request, CancellationToken cancellationToken)
         {
             _ = request ?? throw new ArgumentNullException(nameof(request),
                 "Se necesita un objeto request para realizar esta Task");
-            await _clientService.DeleteMovementAsync(
+            await _movementService.DeleteMovementAsync(
                 request.Id
                 );
         }
+
     }
 }
