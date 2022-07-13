@@ -18,12 +18,13 @@ namespace DojoProject.Domain.Entities
 
         public ICollection<Movement> Movements { get; set; }
 
-        public Account(int account_Number, AccountType type, int initial_Balance, bool state)
+        public Account(int account_Number, AccountType type, int initial_Balance, bool state, Client client)
         {
             Account_Number = account_Number;
             Type = type;
             Initial_Balance = initial_Balance;
             State = state;
+            Client = client;
         }
 
         public Account()

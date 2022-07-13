@@ -13,13 +13,18 @@ namespace DojoProject.Application.Movement.Command
     public class MovementCreateHandler : IRequestHandler<MovementCreateCommand, GuidResultDto>
     {
         private readonly MovementService _clientService;
+        private readonly AccountService _accountService;
+
         private readonly IGenericRepository<Domain.Entities.Account> _repository;
 
-        public MovementCreateHandler(MovementService clientService, IGenericRepository<Domain.Entities.Account> repository)
+        public MovementCreateHandler(MovementService clientService, AccountService accountService, IGenericRepository<Domain.Entities.Account> repository)
         {
             _repository = repository;
             _clientService = clientService
                 ?? throw new ArgumentNullException(nameof(clientService));
+            _accountService = accountService
+                ?? throw new ArgumentNullException(nameof(accountService));
+
         }
 
 
@@ -36,16 +41,21 @@ namespace DojoProject.Application.Movement.Command
                 throw new ArgumentNullException(nameof(actualAccount), "La cuenta no existe");
 
             Guid guidResult = Guid.NewGuid();
+            actualAccount.Initial_Balance += request.Value;
             await _clientService.RegisterMovementAsync(
                 new Domain.Entities.Movement
                 {
                     Id = guidResult,
-                    Balance = request.Balance,
+                    Balance = request.Value + actualAccount.Initial_Balance,
                     Value = request.Value,
                     Type = request.Type,
                     Account = actualAccount,
                 }
             );
+
+            await _accountService.UpdateAccountAsync(
+                actualAccount
+                );
 
             return new GuidResultDto { id = guidResult };
         }

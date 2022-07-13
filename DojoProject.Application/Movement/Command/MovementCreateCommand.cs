@@ -15,7 +15,6 @@ namespace DojoProject.Application.Movement.Command
     public record MovementCreateCommand(
             
             [Required] MovementType Type,
-            [Required] int Balance,
             [Required] int Value,
             [Required] Guid AccountId
 

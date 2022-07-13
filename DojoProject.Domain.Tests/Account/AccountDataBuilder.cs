@@ -16,7 +16,7 @@ namespace DojoProject.Domain.Tests.Account
 
         public Entities.Account Build()
         {
-            Entities.Account Account = new(Account_Number,Type,Initial_Balance,State);
+            Entities.Account Account = new(Account_Number,Type,Initial_Balance,State, Client);
             return Account;
         }
 
