@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "35b5290c-ba3e-49e2-a42f-8e55cee979ef",
+		"name": "Dojo CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11253642"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "clientes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Test Client 2\",\r\n  \"genderType\": 0,\r\n  \"state\": true,\r\n  \"password\": \"1234\",\r\n  \"age\": \"25\",\r\n  \"identification\": \"99222333\",\r\n  \"address\": \"Cra 23N - 25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5443/clientes",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5443",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clientes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"1234\",\r\n    \"state\": true,\r\n    \"name\": \"Testing Raul\",\r\n    \"gender\": 0,\r\n    \"age\": \"25\",\r\n    \"identification\": \"99222333\",\r\n    \"address\": \"Cra 23N - 25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5443/clientes?id=3d189572-ae39-4b3e-8c31-f262f51b9940",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5443",
+							"path": [
+								"clientes"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3d189572-ae39-4b3e-8c31-f262f51b9940"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clientes",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5443/clientes/0d2e0b4e-eff9-41e5-8f75-b9518fdfb9a8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5443",
+							"path": [
+								"clientes",
+								"0d2e0b4e-eff9-41e5-8f75-b9518fdfb9a8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5443/clientes/0a00d59c-9296-489a-ba78-b6d892f84ff1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5443",
+							"path": [
+								"clientes",
+								"0a00d59c-9296-489a-ba78-b6d892f84ff1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuentas",
+			"item": [
+				{
+					"name": "cuentas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5443/cuentas/c299ffe5-74d8-442d-8548-4b196b4f70e0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5443",
+							"path": [
+								"cuentas",
+								"c299ffe5-74d8-442d-8548-4b196b4f70e0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cuentas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"account_Number\": 12412,\r\n  \"type\": 0,\r\n  \"initial_Balance\": 0,\r\n  \"state\": true,\r\n  \"clientId\": \"34b3d496-10f2-49c1-94fe-6ff6d83aafab\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5443/cuentas",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5443",
+							"path": [
+								"cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cuentas",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"account_Number\": 12542,\r\n  \"type\": 0,\r\n  \"initial_Balance\": 0,\r\n  \"state\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5443/cuentas?id=a51d44af-18bf-4095-8af3-c86c6f28d340",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5443",
+							"path": [
+								"cuentas"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "a51d44af-18bf-4095-8af3-c86c6f28d340"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cuentas",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5443/cuentas/a51d44af-18bf-4095-8af3-c86c6f28d340",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5443",
+							"path": [
+								"cuentas",
+								"a51d44af-18bf-4095-8af3-c86c6f28d340"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "movimientos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5443/movimientos/a9854d2e-5582-40b6-b95a-6ef0d87b1b3c",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5443",
+							"path": [
+								"movimientos",
+								"a9854d2e-5582-40b6-b95a-6ef0d87b1b3c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movimientos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": 0,\r\n  \"balance\": 0,\r\n  \"value\": 2000,\r\n  \"accountId\": \"fc0e898e-f072-4c77-864e-63a65ba2a8eb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5443/movimientos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5443",
+							"path": [
+								"movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movimientos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": 0,\r\n  \"balance\": 1000,\r\n  \"value\": 100,\r\n  \"accountId\": \"c299ffe5-74d8-442d-8548-4b196b4f70e0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5443/movimientos?id=794d2f5f-67a5-43e5-affd-a58b3ea97960",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5443",
+							"path": [
+								"movimientos"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "794d2f5f-67a5-43e5-affd-a58b3ea97960"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movimientos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5443/movimientos/876cff97-8728-479f-be31-1635456b44db",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5443",
+							"path": [
+								"movimientos",
+								"876cff97-8728-479f-be31-1635456b44db"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reportes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5443/reportes?dateInit=2021-07-11&dateEnd=2023-07-11&clientId=34b3d496-10f2-49c1-94fe-6ff6d83aafab",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"reportes"
+					],
+					"query": [
+						{
+							"key": "dateInit",
+							"value": "2021-07-11"
+						},
+						{
+							"key": "dateEnd",
+							"value": "2023-07-11"
+						},
+						{
+							"key": "clientId",
+							"value": "34b3d496-10f2-49c1-94fe-6ff6d83aafab"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

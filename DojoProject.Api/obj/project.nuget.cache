@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RPjr5/JNT90ldSG+Ofj+beCTzgvG+GkdHBXWTGO4NBMlfI+OibUetJFeS6q0THIjc9CGUtCgCT1tjAtn32WmWA==",
+  "dgSpecHash": "fFytWDtC0skVP4zzqGw2IKk/ptsKsXf0n626Bq5VA5hB1pkyCTvmp1r7f9Wvnr8XHZ89lM/yir3BmbbPvu7H/g==",
   "success": true,
   "projectFilePath": "C:\\Users\\orlando.mejia\\Documents\\source\\DojoProject\\DojoProject.Api\\DojoProject.Api.csproj",
   "expectedPackageFiles": [
@@ -69,6 +69,7 @@
     "C:\\Users\\orlando.mejia\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\orlando.mejia\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\orlando.mejia\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\orlando.mejia\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512",
     "C:\\Users\\orlando.mejia\\.nuget\\packages\\microsoft.win32.primitives\\4.0.1\\microsoft.win32.primitives.4.0.1.nupkg.sha512",
     "C:\\Users\\orlando.mejia\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\orlando.mejia\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
